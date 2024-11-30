@@ -7,7 +7,7 @@ do
 	do
 		for i in {0..29}
 		do
-			for k in {3..3}
+			for k in {1..3}
 			do
 				./gedCount singlePair/AIDS${j}/$i $j $h $k>> ResultsCount/AIDS_len${j}_thread${h}_method${k}_out
 			done
