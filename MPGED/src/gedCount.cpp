@@ -1588,8 +1588,6 @@ public:
 	    countRead[id]++;
 	    countExplore[id]++;
 	    if (m.f == nullptr) {
-	    	countRead[id]--;
-	    	countExplore[id]--;
                 if (lv == global) {
                     done.fetch_add(1);
                     return;
