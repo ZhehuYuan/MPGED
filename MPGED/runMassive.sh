@@ -5,7 +5,7 @@ for ((j = 20; j <= 20; j += 5));
 do
 	for ((h = 1; h <= 128; h *= 2));
 	do
-		for k in {1..3}
+		for k in {1..4}
 		do
 			for i in {0..29}
 			do
