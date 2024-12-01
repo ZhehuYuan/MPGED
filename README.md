@@ -77,5 +77,5 @@ Excepting step 7, all other output files are name as \<dataset name\>_len\<numbe
 ## Run the MP-GED with your data and settings
 
 ```
-./ged \<file name\> \<number of nodes in each graph\> \<number of threads\> \<method Id, 0 for A-star+, 1 for PGED, 2 for HGED, 3 for MPGED, 4 for CPQ variance of MP-GED\>
+./ged <file name> <number of nodes in each graph> <number of threads> <method Id, 0 for A-star+, 1 for PGED, 2 for HGED, 3 for MPGED, 4 for CPQ variance of MP-GED>
 ```
