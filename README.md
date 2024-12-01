@@ -17,13 +17,17 @@ $ cd MPGED/MPGED/
 
 ## Dataset
 
-We use two real-world application datasets, namely AIDS (https://dtp.cancer.gov/docs/aids/aidsdata.html) and PubChem (https://pubchem.ncbi.nlm.nih.gov/). For each dataset, we randomly select four groups of graph pairs, with each group containing 30 pairs of graphs having the same number of vertices. The graphs in these groups contain 15, 20, 25, and 30 vertices, respectively. For graphs with fewer than 15 vertices, the GED computation is completed too quickly to take full advantage of massive parallelism. For graphs with more than 30 vertices, the GED calculations by all algorithms exceed the one-hour time limit. We briefly introduce the datasets as follows:
+We use two real-world application datasets, namely AIDS (https://dtp.cancer.gov/docs/aids/aidsdata.html) and PubChem (https://pubchem.ncbi.nlm.nih.gov/). For each dataset, we randomly select four groups of graph pairs, with each group containing 30 pairs of graphs having the same number of vertices. The graphs in these groups contain 15, 20, 25, and 30 vertices, respectively. The graph pairs are stored in "singlePair/".  We briefly introduce the datasets as follows:
+
   • AIDS is an antivirus screening dataset containing 42,687 graphs. Each graph in this dataset has an average of 25.6 vertices and 27.6 edges.
+
   • PubChem is a chemical compound dataset. Due to its ex-tremely large size, we selected the first 21,160 graphs from the dataset, with each graph having an average of 26.8 vertices and 26.6 edges.
 
 ---
 
-## Run the MP-GED
+## Test the MP-GED
+
+Running theses tests, we use a machine with two AMD EPYC 7713 64-Core thread, 250GB of main memory, and the 64-bit Rocky Linux operating system.
 
 1) Complie code
 
@@ -69,3 +73,9 @@ $./runUb
 
 
 Excepting step 7, all other output files are name as \<dataset name\>_len\<number of vertices in each graph\>_thread\<number of threads\>_method\<method Id, 0 for A-star+, 1 for PGED, 2 for HGED, 3 for MPGED, 4 for CPQ variance of MP-GED\>_out.
+
+## Run the MP-GED with your data and settings
+
+```
+./ged \<file name\> \<number of nodes in each graph\> \<number of threads\> \<method Id, 0 for A-star+, 1 for PGED, 2 for HGED, 3 for MPGED, 4 for CPQ variance of MP-GED\>
+```
